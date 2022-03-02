@@ -447,7 +447,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'Space' to fire the bullets gamer!
+  m_Text: Press 'Space' to fire the bullet
 --- !u!222 &474693686
 CanvasRenderer:
   m_ObjectHideFlags: 0
