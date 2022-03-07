@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
       Debug.Log("ded");
       if(deathEvent != null){
         Debug.Log("deathEvent delegate triggered!");
-        deathEvent((enemyType + 1) * 100);
+        deathEvent((enemyType + 1) * 10);
       }
       Destroy(this.transform.gameObject);
     }

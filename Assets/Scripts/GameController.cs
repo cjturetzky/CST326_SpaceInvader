@@ -25,6 +25,6 @@ public class GameController : MonoBehaviour
     void onEnemyDeath(int score){
         Debug.Log("Kill confirmed!");
         totalScore += score;
-        scoreText.text = $"Score\n{totalScore}";
+        scoreText.SetText("Score\n{0:00000}", totalScore);
     }
 }
