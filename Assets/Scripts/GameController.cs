@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
         foreach (Enemy e in FindObjectsOfType<Enemy>()){
             e.deathEvent += onEnemyDeath;
         }
+        FindObjectOfType<Player>().playerDeathEvent += onPlayerDeath;
     }
 
     // Update is called once per frame
@@ -36,5 +38,10 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, highScore);
             PlayerPrefs.Save();
         }
+    }
+
+    void onPlayerDeath(){
+        Debug.Log("Player died :(");
+        SceneManager.LoadScene("DemoScene");
     }
 }
