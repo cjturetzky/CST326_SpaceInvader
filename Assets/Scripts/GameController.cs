@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         highScore = PlayerPrefs.GetInt(highScoreKey,0);
         hiScoreText.SetText("High Score\n{0:00000}", highScore);
         foreach (Enemy e in FindObjectsOfType<Enemy>()){
@@ -24,6 +23,10 @@ public class GameController : MonoBehaviour
     }
 
     void onEnemyDeath(int score){
+        if(score == 0){
+            loadScene("CreditsScene");
+            return;
+        }
         Debug.Log("Kill confirmed!");
         totalScore += score;
         scoreText.SetText("Score\n{0:00000}", totalScore);
@@ -37,6 +40,10 @@ public class GameController : MonoBehaviour
 
     void onPlayerDeath(){
         Debug.Log("Player died :(");
-        SceneManager.LoadScene("DemoScene");
+        loadScene("CreditsScene");
+    }
+
+    public void loadScene(string scene){
+        SceneManager.LoadScene(scene);
     }
 }

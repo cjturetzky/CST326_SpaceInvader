@@ -70,6 +70,9 @@ public class Enemy : MonoBehaviour
       if(deathEvent != null){
         Debug.Log("deathEvent delegate triggered!");
         deathEvent((enemyType + 1) * 10);
+        if(enemyCount == 0){
+          deathEvent(0);
+        }
       }
       Destroy(this.transform.gameObject);
     }
