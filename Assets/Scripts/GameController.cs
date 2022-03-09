@@ -14,18 +14,13 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         highScore = PlayerPrefs.GetInt(highScoreKey,0);
         hiScoreText.SetText("High Score\n{0:00000}", highScore);
         foreach (Enemy e in FindObjectsOfType<Enemy>()){
             e.deathEvent += onEnemyDeath;
         }
         FindObjectOfType<Player>().playerDeathEvent += onPlayerDeath;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void onEnemyDeath(int score){

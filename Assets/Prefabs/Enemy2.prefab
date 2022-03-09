@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 772401173140651648}
   - component: {fileID: 4572823135637527087}
   - component: {fileID: 3952090420437110185}
+  - component: {fileID: -7344018610246123663}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -155,3 +156,24 @@ MonoBehaviour:
   moveTime: 0
   shootCooldown: 0
   enemyType: 1
+--- !u!50 &-7344018610246123663
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222987207175534897}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

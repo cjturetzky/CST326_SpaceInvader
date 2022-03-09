@@ -24,9 +24,10 @@ public class Enemy : MonoBehaviour
     void Start(){
       stepLR = new Vector3(1.25f, 0, 0);
       stepDown = new Vector3(0, -1.25f, 0);
+      enemyCount = 16;
     }
     void Update(){
-      moveTime = 0.5f + (2 * (enemyCount - 1 / TOTAL_ENEMIES));
+      moveTime = 2.5f - ((TOTAL_ENEMIES - enemyCount)/4);
       timeSinceLastMove += Time.deltaTime;
       timeSinceLastShot += Time.deltaTime;
 
