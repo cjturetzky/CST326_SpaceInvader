@@ -781,7 +781,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.44281775, g: 0.6118058, b: 0.8773585, a: 0}
+  m_BackGroundColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2199,10 +2199,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5662055685395648977, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 129043850064504577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
@@ -2232,12 +2257,12 @@ PrefabInstance:
     - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
@@ -2257,7 +2282,17 @@ PrefabInstance:
     - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447747329123161577, guid: 46f7c04cfd4b73e49a865596061b9ab8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8017684208409169088, guid: 46f7c04cfd4b73e49a865596061b9ab8,
         type: 3}

@@ -9,14 +9,20 @@ public class Player : MonoBehaviour
   public Transform shottingOffset;
   public delegate void PlayerDeathDelegate();
   public PlayerDeathDelegate playerDeathEvent;
+  private Animator playerAnimator;
     // Update is called once per frame
+
+    void Start(){
+      playerAnimator = GetComponent<Animator>();
+    }
+
     void Update()
     {
       if (Input.GetKeyDown(KeyCode.Space))
       {
         GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
         Debug.Log("Bang!");
-
+        playerAnimator.SetTrigger("Shoot");
         Destroy(shot, 3f);
 
       }
@@ -31,8 +37,10 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
+      Debug.Log("Player died");
+      playerAnimator.SetTrigger("Die");
       Die();
-      Destroy(this.transform.gameObject);
+      Destroy(this.transform.gameObject, 2f);
     }
 
     void Die(){

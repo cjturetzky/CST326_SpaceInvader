@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
 
     void onEnemyDeath(int score){
         if(score == 0){
-            loadScene("CreditsScene");
+            StartCoroutine(LoadLevelAfterDelay(0.5f));
             return;
         }
         Debug.Log("Kill confirmed!");
@@ -40,10 +40,12 @@ public class GameController : MonoBehaviour
 
     void onPlayerDeath(){
         Debug.Log("Player died :(");
-        loadScene("CreditsScene");
+        StartCoroutine(LoadLevelAfterDelay(1.5f));
     }
 
-    public void loadScene(string scene){
-        SceneManager.LoadScene(scene);
-    }
+    IEnumerator LoadLevelAfterDelay(float delay)
+     {
+         yield return new WaitForSeconds(delay);
+         SceneManager.LoadScene("CreditsScene");
+     }
 }

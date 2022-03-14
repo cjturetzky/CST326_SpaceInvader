@@ -20,12 +20,15 @@ public class Enemy : MonoBehaviour
   private int stepCount = 5;
   private Vector3 stepLR;
   private Vector3 stepDown;
+  private Animator animator;
 
     void Start(){
       stepLR = new Vector3(1.25f, 0, 0);
       stepDown = new Vector3(0, -1.25f, 0);
       enemyCount = 16;
+      animator = GetComponent<Animator>();
     }
+
     void Update(){
       moveTime = 2.5f - ((TOTAL_ENEMIES - enemyCount)/4);
       timeSinceLastMove += Time.deltaTime;
@@ -37,6 +40,7 @@ public class Enemy : MonoBehaviour
       }
 
       if (timeSinceLastShot >= shootCooldown && Random.Range(0, 1000) == 1){
+        animator.SetTrigger("Shoot");
         timeSinceLastShot = 0;
         Debug.Log("Incoming!");
         GameObject enemyShot = Instantiate(bullet, shoottingOffset.position, Quaternion.identity);
@@ -66,6 +70,7 @@ public class Enemy : MonoBehaviour
 
     void Die(){
       Debug.Log("ded");
+      animator.SetTrigger("Die");
       enemyCount--;
       if(deathEvent != null){
         Debug.Log("deathEvent delegate triggered!");
@@ -74,6 +79,6 @@ public class Enemy : MonoBehaviour
           deathEvent(0);
         }
       }
-      Destroy(this.transform.gameObject);
+      Destroy(this.transform.gameObject, 0.25f);
     }
 }
